@@ -29,17 +29,4 @@
 - Ferramenta de teste: **Insomnia**.
 
 ---
-
-## Dicas de Organização e Documentação
-1. **Código**
-   - Agrupe funções auxiliares relacionadas em um arquivo separado, como `helpers.js`, para melhor modularização.
-   - Use comentários claros e objetivos em funções e trechos importantes do código.
-   - Valide entradas (parâmetros e corpo das requisições) para evitar erros de execução.
-
-2. **Documentação**
-   - Mantenha este README sempre atualizado para refletir as alterações e funcionalidades do projeto.
-   - Inclua exemplos de requisições com os formatos esperados para facilitar testes.
-
----
-
 💡 Este projeto foi desenvolvido em **27 de novembro de 2024** para aprimorar habilidades práticas no desenvolvimento de APIs com Node.js.
