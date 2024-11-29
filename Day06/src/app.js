@@ -1,16 +1,8 @@
 import express from 'express'
-
+import conexao from '../infra/conexao.js';
 const app =  express();
 
 app.use(express.json());
-
-//mock
-const selecoes = [
-    {id: 1, selecao: "Brasil", grupo: 'F'},
-    {id: 2, selecao: "Argentina", grupo: 'F'},
-    {id: 3, selecao: "França", grupo: 'F'},
-    {id: 4, selecao: "Espanha", grupo: 'F'},
-]
 
 function buscarSelecaoPorID(id){
     return selecoes.filter(selecao => selecao.id == id);
@@ -25,12 +17,17 @@ app.post('/selecoes', (req, res) =>{
     res.status(201).send('Seleção Cadastrada!');
 });
 
-app.get('/', (req, res) =>{
-    res.send("Ola");
-});
-
 app.get('/selecoes', (req, res) => {
-    res.send(selecoes);
+    //res.send(selecoes);
+    const sql = "SELECT * FROM selecoes";
+    conexao.query(sql, (error, result) =>{
+        if(error){
+            console.log(error);
+            res.status(404).json({'erro': error});
+        }else{
+            res.status(200).json(result);
+        }
+    });
 });
 
 app.get('/selecoes/:id', (req, res) => {
