@@ -11,7 +11,7 @@ class SelecaoRepository{
 
     findAll(){
         const sql = "SELECT * FROM selecoes;";
-        return consulta(sql, id, 'Nao foi possivel localizar');
+        return consulta(sql, 'Nao foi possivel localizar');
     }
     
     findById(id){
