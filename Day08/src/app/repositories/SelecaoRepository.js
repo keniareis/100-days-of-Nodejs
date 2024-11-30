@@ -53,14 +53,6 @@ class SelecaoRepository{
     
     delete(id){
         const sql = "DELETE FROM selecoes WHERE id=?;";
-        return new Promise((resolve, reject) => {
-            conexao.query(sql, id, (error, result) => {
-                if(error) return reject('Não foi possivel deletar');
-                const rows = JSON.parse(JSON.stringify(result));
-                console.log(rows);
-                return resolve(rows);
-            });
-        });
     }
 
 }
